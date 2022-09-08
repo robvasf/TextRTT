@@ -19,7 +19,6 @@ def skew(img_read):
     img_temp = cv.resize(img_read, dim, interpolation=cv.INTER_AREA)
     img_skewed, h_ri, h_rf, v_ri, v_rf = rotated(img_temp, img_read)
     img_skewed = img_skewed[h_ri:h_rf, v_ri:v_rf]
-
     return img_skewed
 
 
@@ -44,7 +43,6 @@ def rotate(img_skd):
     elif angle == 270:
         img_skd = cv.rotate(img_skd, cv.ROTATE_90_COUNTERCLOCKWISE)
         img_skd = skew(img_skd)    
-
     return img_skd
 
 
